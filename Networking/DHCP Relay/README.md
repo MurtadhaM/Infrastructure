@@ -12,8 +12,7 @@ DHCP Relay is a service that forwards DHCP packets between DHCP clients and DHCP
 
 
 ## Lab
-![Demo](https://github.com/MurtadhaM/Infrastructure/blob/main/Networking/DHCP%2Relay/DHCP%2Relay.png?raw=true)
-
+![Demo](https://github.com/MurtadhaM/Infrastructure/blob/main/Networking/DHCP%20Relay/DHCP%20Relay.png?raw=true)
 ## DHCP Relay Configuration Guidelines (Cisco)
 
 ----
