@@ -5,9 +5,8 @@ This is a script to configure Cisco Voice VLANs. It is based on the Cisco Voice 
 
 ## Demo
 ### Image
-![Demo](https://raw.githubusercontent.com/andrewvaughan/icinga2/master/Networking/Cisco%20Auto%20Voice%20Vlan/demo.png)
+![Demo](https://github.com/MurtadhaM/Infrastructure/blob/main/Networking/Cisco%20Auto%20Voice%20Vlan/VOICE%20VLAN.png?raw=true)
 
-["]
 ## Voice VLAN Configuration Guidelines (Cisco)
 
 ----
