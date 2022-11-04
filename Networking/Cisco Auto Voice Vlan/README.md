@@ -1,13 +1,18 @@
 # Cisco  Voice VLAN Configuration
-
+<a href="http://www.findasnake.com" name="Cisco Voice VLAN Configuration"><img src="https://cdn-icons-png.flaticon.com/512/3162/3162235.png" width="100"/> </a>
+----
 This is a script to configure Cisco Voice VLANs. It is based on the Cisco Voice VLAN Configuration Guide.
 
+## Table of Contents
+----
+- [Overview](#overview)
+- [Lab](#lab)
+- [Configuration](#configuration)
+- [License](#license)
+- [Author](#author)
 
-## Demo
-### Image
-![Demo](https://github.com/MurtadhaM/Infrastructure/blob/main/Networking/Cisco%20Auto%20Voice%20Vlan/VOICE%20VLAN.png?raw=true)
 
-## Voice VLAN Configuration Guidelines (Cisco)
+## Overview
 
 ----
 - Because a Cisco 7960 IP Phone also supports a connection to a PC or other device, a port connecting
@@ -30,11 +35,20 @@ same IP subnet. These conditions indicate that they are in the same VLAN:
 VLAN.
 ``
 
+### Lab
+![Demo](https://github.com/MurtadhaM/Infrastructure/blob/main/Networking/Cisco%20Auto%20Voice%20Vlan/VOICE%20VLAN.png?raw=true)
 
 
-### Configuration Example
+
+### Configuration
 ```
 interface GigabitEthernet1/0/5
 switchport access vlan 100
 switchport voice vlan 700
 ```
+#### License
+[MIT](https://choosealicense.com/licenses/mit/)
+
+#### Author
+[Murtadha Marzouq](http://www.findasnake.com 
+    )
