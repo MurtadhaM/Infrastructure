@@ -17,7 +17,7 @@ This repository will house Infrastructure Deployment &amp; Automation
 
 ## Automation 
 - <a href="https://github.com/MurtadhaM/Infrastructure/tree/main/Automation/Ansible" >Ansibles</a>
-- <a href="https://github.com/MurtadhaM/Infrastructure/tree/main/Automation/Azure%20CD:CI%20(ARM)" >Azure Powershell</a>
+- <a href="https://github.com/MurtadhaM/Infrastructure/tree/main/Automation/Azure Powershell" >Azure Powershell</a>
 - <a href="https://github.com/MurtadhaM/Infrastructure/tree/main/Automation/Terraform" >Terraform</a>
 - <a href="https://github.com/MurtadhaM/Infrastructure/tree/main/Automation/Windows%20Autopilot" >Windows Autopilot</a>
 
