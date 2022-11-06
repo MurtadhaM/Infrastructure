@@ -1,42 +1,3 @@
-# Terraform
-<img 
-center src="https://www.devopsschool.com/blog/wp-content/uploads/2021/07/terraform-architecture-components-workflow-1.jpg" width="100%"/> 
-
-----
-
-## Table of Contents
-----
-- [Overview](#overview)
-- [Environment](#environment)
-- [Configuration](#configuration)
-- [License](#license)
-- [Author](#author)
-
-# Overview
-
-
-<h2 align="center"> Ansible VS Terraform</h2>
-
-| Ansible | Terraform |
-| --- | --- |
-| Ansible is a configuration management tool. | Terraform is an infrastructure as code tool. |
-| Ansible is agentless. | Terraform is agent-based. |
-| Ansible is written in Python. | Terraform is written in Go. |
-| Ansible is a push-based tool. | Terraform is a pull-based tool. |
-| Ansible is a declarative tool. | Terraform is an imperative tool. |
-
-# Resources
-- [Terraform](https://registry.terraform.io/namespaces/hashicorp/)  
-- [Terraform Docs](https://www.terraform.io/docs/index.html)
----
-## Storing Credentials
----
-Ansible supports storing credentials in a variety of ways. The most common way is to store them in a file called `vault.yml` and then encrypt it using `ansible-vault`. This file can then be used to store credentials for various services.
-
-
-# Configuration 
-### Sample Deployment
-```json 
 ## This is a Terraform configuration file. For more information, see the Terraform documentation.
 provider "azurerm" {
   features {}
@@ -96,15 +57,3 @@ resource "azurerm_windows_virtual_machine" "Snake" {
     version   = "latest"
   }
 }
-
-```
-
-
-
-
-#### License
-[MIT](https://choosealicense.com/licenses/mit/)
-
-#### Author
-[Murtadha Marzouq](http://www.findasnake.com 
-    )
