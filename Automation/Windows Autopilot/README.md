@@ -21,7 +21,6 @@ Windows Autopilot is a collection of technologies used to set up and pre-configu
 
 
 
-
 # Resources
 
 
