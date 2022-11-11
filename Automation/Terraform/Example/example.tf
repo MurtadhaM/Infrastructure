@@ -1,9 +1,9 @@
-resource "Provider_ResourceType" "NameOfResource"{
+#resource "Provider_ResourceType" "NameOfResource"{
 
-	Key = "Value"
+#	Key = "Value"
 
-	Key2 = "Value2"
+#	Key2 = "Value2"
 
 
 
-}
+#}
