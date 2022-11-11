@@ -14,7 +14,7 @@ center src="https://www.devopsschool.com/blog/wp-content/uploads/2021/07/terrafo
 
 # Overview
 
-<a href="https://kodekloud.com/lessons/labs/" > RESOURCE: <a/>
+<a href="https://kodekloud.com/lessons/labs/" > RESOURCE & Labs <a/>
 <h2 align="center"> Ansible VS Terraform</h2>
 
 | Ansible | Terraform |
