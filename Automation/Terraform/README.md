@@ -7,14 +7,75 @@ center src="https://www.devopsschool.com/blog/wp-content/uploads/2021/07/terrafo
 ## Table of Contents
 ----
 - [Overview](#overview)
-- [Environment](#environment)
+  - [Prerequisites](#prerequisites)
+  - [Installation](#installation) 
+  - [Environment](#environment)
+  - [Terraform Commands](#shell-commands)
+  - [Resources](#resources)
 - [Configuration](#configuration)
 - [License](#license)
 - [Author](#author)
 
 # Overview
+Terraform is an open-source infrastructure as code software tool created by HashiCorp. Users define and provide data center infrastructure using a declarative configuration language known as HashiCorp Configuration Language, or optionally JSON. Terraform generates an execution plan describing what it will do to reach the desired state, and then executes it to build the described infrastructure. As of May 2021, Terraform supports more than 90 infrastructure and service providers.
+### Installation
+- [Download Terraform](https://www.terraform.io/downloads.html)
+- [Install Terraform](https://learn.hashicorp.com/tutorials/terraform/install-cli)
+### Resources:
+- [Labs](https://kodekloud.com/lessons/labs/)
+- [Terraform Cheat Sheet](https://raw.githubusercontent.com/scraly/terraform-cheat-sheet/master/terraform-cheat-sheet.pdf)
+- [Terraform Azure Provider](https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs)
 
-<a href="https://kodekloud.com/lessons/labs/" > RESOURCE & Labs <a/>
+## Lifecycle
+| Order | Name | Description |
+| --- | --- | --- |
+| 1 | create_before_destroy | (Optional) When true, the resource will be destroyed and recreated if a change is made to the resource. This is useful for resources that cannot be updated in place. |
+| 2 | prevent_destroy | (Optional) When true, the resource will not be destroyed when the resource is removed from the configuration. |
+| 3 | ignore_changes | (Optional) A list of arguments to ignore changes to. This is useful for sensitive values that should not be stored in the state file. |
+
+#### Example:
+
+```bash
+resource "azurerm_resource_group" "example" {
+  name     = "example-resources"
+  location = "EastUS2"
+  lifecycle {
+    prevent_destroy = true
+  }
+}
+```
+
+
+
+## Shell Commands:
+```bash
+#Initialize working directory containing tf files
+terraform init 
+#Generate and show an execution plan
+terraform plan 
+#Inspect Terraform state or plan
+terraform show 
+#Builds or changes infrastructure
+terraform apply 
+#Destroy Terraform-managed infrastructure
+terraform destroy 
+#Read an output from a state file
+terraform output 
+#Verifies the  the configuration files in a directory
+terraform validate 
+#Rewrites config files to canonical format
+terraform fmt 
+#Prints a tree of the providers used in the configuration
+terraform providers 
+#Update local state file against real resources
+terraform refresh 
+#Create a visual graph of Terraform resources
+terraform graph 
+#Create a visual graph of Terraform resources and pipe the output to Graphviz (dot) to generate an SVG image
+terraform graph |dot  -Tsvg > image.svg 
+
+
+```
 <h2 align="center"> Ansible VS Terraform</h2>
 
 | Ansible | Terraform |
@@ -25,76 +86,77 @@ center src="https://www.devopsschool.com/blog/wp-content/uploads/2021/07/terrafo
 | Ansible is a push-based tool. | Terraform is a pull-based tool. |
 | Ansible is a declarative tool. | Terraform is an imperative tool. |
 
-# Resources
-- [Terraform](https://registry.terraform.io/namespaces/hashicorp/)  
-- [Terraform Docs](https://www.terraform.io/docs/index.html)
----
-## Storing Credentials
----
-Ansible supports storing credentials in a variety of ways. The most common way is to store them in a file called `vault.yml` and then encrypt it using `ansible-vault`. This file can then be used to store credentials for various services.
 
 
-# Configuration 
-### Sample Deployment
-```json 
-## This is a Terraform configuration file. For more information, see the Terraform documentation.
+
+# Configuration
+```bash
+
+
+variable "location" {
+  default = "EastUS2"
+}
+
+variable "resource_group_name" {
+  default = "Snake-Resource-Group"
+}
+variable "virtual_network_name" {
+  default = "Snake-Vnet"
+}
+variable "subnet_name" {
+  default = "SnakeSubnet"
+}
+
+variable "subnet_address_prefixes" {
+  default = ["172.16.100.0/24"]
+}
+
+variable "address_space" {
+  default =  ["172.16.0.0/16"]
+}
+
+# Configure the Microsoft Azure Provider
 provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "Snake" {
-  name     = "Snake-resources"
-  location = "West Europe"
+# RANDOM STRING
+resource "random_id" "resource-name" {
+  byte_length = 8
 }
 
-resource "azurerm_virtual_network" "Snake" {
-  name                = "SnakeNetwork"
-  address_space       = ["10.0.0.0/16"]
-  location            = azurerm_resource_group.Snake.location
-  resource_group_name = azurerm_resource_group.Snake.name
-}
 
-resource "azurerm_subnet" "Snake" {
-  name                 = "internal"
-  resource_group_name  = azurerm_resource_group.Snake.name
-  virtual_network_name = azurerm_virtual_network.Snake.name
-  address_prefixes     = ["10.0.2.0/24"]
-}
 
-resource "azurerm_network_interface" "Snake" {
-  name                = "Snake-nic"
-  location            = azurerm_resource_group.Snake.location
-  resource_group_name = azurerm_resource_group.Snake.name
-
-  ip_configuration {
-    name                          = "internal"
-    subnet_id                     = azurerm_subnet.Snake.id
-    private_ip_address_allocation = "Dynamic"
-  }
-}
-
-resource "azurerm_windows_virtual_machine" "Snake" {
-  name                = "Snake-machine"
-  resource_group_name = azurerm_resource_group.Snake.name
-  location            = azurerm_resource_group.Snake.location
-  size                = "Standard_F2"
-  admin_username      = "Snake"
-  admin_password      = YOUR_PASSWORD
-  network_interface_ids = [
-    azurerm_network_interface.Snake.id,
+# APPEBD THE RANDOMIZED NAME TO THE RESOURCE GROUP NAME
+resource "azurerm_resource_group" "resource-group" {
+  name     = "Snake-${random_id.resource-name.hex}-RG"
+  location = var.location
+  depends_on = [
+     random_id.resource-name
   ]
+}
 
-  os_disk {
-    caching              = "ReadWrite"
-    storage_account_type = "Standard_LRS"
-  }
 
-  source_image_reference {
-    publisher = "MicrosoftWindowsServer"
-    offer     = "WindowsServer"
-    sku       = "2016-Datacenter"
-    version   = "latest"
-  }
+# Create a virtual network
+resource "azurerm_virtual_network" "vnet" {
+  name = var.virtual_network_name
+  address_space       =  var.address_space
+  location            = var.location
+  resource_group_name = azurerm_resource_group.resource-group.name
+  depends_on = [
+     azurerm_resource_group.resource-group
+  ]
+}
+
+# Create a subnet
+resource "azurerm_subnet" "subnet" {
+  name                 =  var.subnet_name
+  resource_group_name  = azurerm_resource_group.resource-group.name
+  virtual_network_name = azurerm_virtual_network.vnet.name
+  address_prefixes     = var.subnet_address_prefixes
+  depends_on = [
+     azurerm_virtual_network.vnet
+  ] 
 }
 
 ```

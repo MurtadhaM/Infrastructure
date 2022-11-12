@@ -1,17 +1,17 @@
-variable "filename"{
-default = "/users/dashm/Documents/Github/infrastructure/automation/terraform/Example/example.txt"
+variable "filename" {
+  default = "example.txt"
 }
 
-variable "content"{
-default =  "We love pets!"
+variable "content" {
+  default = "We love pets!"
 }
-variable "prefix"{
-default =  "Mrs"
+variable "prefix" {
+  default = "Mrs"
 }
-variable "separator"{
-default = "."
+variable "separator" {
+  default = "."
 }
-variable "length"{
-default =  "1"
+variable "length" {
+  default = "1"
 }
 
