@@ -1,0 +1,4 @@
+[switches]
+switch1 host=192.168.79.200 username=cisco password=cisco port=23 
+192.168.79.200 username=cisco password=cisco port=23
+
