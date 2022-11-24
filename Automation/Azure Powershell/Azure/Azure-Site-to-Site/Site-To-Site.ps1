@@ -23,10 +23,10 @@ $GatewayName = $VNETName + "-GW"
 $LocalGatewayName = $VNETName + "-LGW"
 $LocalGatewayIP = "20.29.82.7"
 $PublicIPName = $VNETName + "-GW-PublicIP" 
-$PublicIPAllocationMethod = "Static"
+$PublicIPAllocationMethod = "Dynamic"
 $PublicIPDnsLabel = "snakevnet-gw"
 $VirtualNetworkGatewayType = "Vpn"
-$VirtualNetworkGatewaySku = "VpnGw1"
+$VirtualNetworkGatewaySku = "VpnGw2"
 
 function Get-InteractiveParameters {
 
@@ -42,10 +42,10 @@ $GatewayName = $VNETName + "-GW"
 $LocalGatewayName = $VNETName + "-LGW"
 $LocalGatewayIP = Read-Host -Prompt "Enter the Local Gateway IP (Remote Device IP)"
 $PublicIPName = $VNETName + "-GW-PublicIP"
-$PublicIPAllocationMethod = "Static"
+$PublicIPAllocationMethod = "Dynamic"
 $PublicIPDnsLabel = Read-Host -Prompt "Enter the Public IP DNS Label (Default: snakevnet-gw)"
 $VirtualNetworkGatewayType = "Vpn"
-$VirtualNetworkGatewaySku = "VpnGw1"
+$VirtualNetworkGatewaySku = "VpnGw2"
 
 
 }
@@ -118,11 +118,11 @@ function Create-Subnet2 {
 }
 
 function Create-GatewaySubnet{
-    $GatewaySubnet = New-AzVirtualNetworkSubnetConfig -Name $GatewaySubnetName -AddressPrefix $GatewaySubnetAddressPrefix
+    $GatewaySubnet = New-AzVirtualNetworkSubnetConfig -Name $GatewaySubnetName -AddressPrefix $GatewaySubnetAddressPrefix 
     return $GatewaySubnet
 }
 function Create-Gateway {
-    $PublicIP = get-AzPublicIpAddress -ResourceGroupName $ResourceGroupName -Name $PublicIPName
+    $PublicIP = get-AzPublicIpAddress -ResourceGroupName $ResourceGroupName -Name $PublicIPName 
 
     $subnet = New-AzVirtualNetworkSubnetConfig -Name $GatewaySubnetName -AddressPrefix $GatewaySubnetAddressPrefix 
     $subnetID = Get-AzVirtualNetworkSubnetConfig -VirtualNetwork $VNET -Name $GatewaySubnetName  | Select-Object -ExpandProperty Id
@@ -130,7 +130,7 @@ function Create-Gateway {
 
 
     if($ResourceGroupName -and $VNETName -and $GatewayName -and $PublicIPName  -and $PublicIPDnsLabel -and $VirtualNetworkGatewayType -and $VirtualNetworkGatewaySku){
-        $Gateway = New-AzVirtualNetworkGateway -ResourceGroupName $ResourceGroupName -Name $GatewayName -Location $Location     -GatewayType $VirtualNetworkGatewayType -VpnType RouteBased -GatewaySku VpnGw1  -IpConfigurations $vnetIpConfig  
+        $Gateway = New-AzVirtualNetworkGateway -ResourceGroupName $ResourceGroupName -Name $GatewayName -Location $Location     -GatewayType $VirtualNetworkGatewayType -VpnType RouteBased -GatewaySku VpnGw2  -IpConfigurations $vnetIpConfig  
     }
     else {
         Write-Host "One of the parameters is missing"
@@ -205,4 +205,5 @@ function Create-AllResources {
     $Connection = Create-Connection (Get-Random -Minimum 1 -Maximum 1000) ('Connection' + (Get-Random -Minimum 1 -Maximum 1000))
 
 }
+
 
