@@ -1,1 +1,0 @@
-{"changed": true, "failed": false, "output": ["show inventory\r\nIOU2>"]}
