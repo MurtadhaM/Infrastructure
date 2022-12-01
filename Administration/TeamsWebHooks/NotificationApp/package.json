@@ -1,0 +1,24 @@
+{
+  "name": "incoming-webhook-notification",
+  "version": "1.0.0",
+  "description": "Microsoft Teams Toolkit Incoming Webhook Notification",
+  "author": "Murtadha Marzouq",
+  "license": "MIT",
+  "main": "./lib/index.js",
+  "scripts": {
+    "dev": "nodemon -e ts --exec node --inspect=9239 --signal SIGINT -r ts-node/register ./src/index.ts",
+    "build": "tsc --build",
+    "start": "node ./lib/src/index.js",
+    "watch": "nodemon --watch ./src -e ts --exec \"npm run start\""
+  },
+ 
+  "dependencies": {
+    "@microsoft/adaptivecards-tools": "^1.0.0",
+    "axios": "^0.26.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "ts-node": "^10.9.1",
+    "typescript": "^4.9.3"
+  }
+}
