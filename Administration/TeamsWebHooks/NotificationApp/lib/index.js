@@ -11,13 +11,11 @@ const webhookTarget = new WebhookTarget(new URL(webhookUrl));
 /**
 * Send adaptive cards.
 */
+
+import template from  "../adaptiveCards/SnakeCustomCard.json";
 webhookTarget.sendAdaptiveCard(
     AdaptiveCards.declare(template).render(
-    {
-        "title": "A Snake had Sent a Message",
-        "appName": "Snake Notify",
-        "description": "All the baby 🐍 snakes are gone. We need to find them.",
-        "notificationUrl" : "http://www.findasnake.com",
-    }))
+        template
+        ))
 .then(() => console.log("Send adaptive card successfully."))
 .catch(e => console.log(`Failed to send adaptive card. ${e}`));

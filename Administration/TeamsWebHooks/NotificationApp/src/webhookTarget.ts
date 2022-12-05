@@ -57,4 +57,31 @@ export class WebhookTarget {
         }
       );
     }
+
+    /**
+     * Send an adaptive 
+     * 
+     * 
+     * 
+     * */
+    
+    public sendAdaptiveCard2(card: unknown): Promise<void> {
+        return axios.post(
+          this.webhook.toString(),
+          {
+            type: "message",
+            attachments: [
+              {
+                contentType: "application/vnd.microsoft.card.adaptive",
+                contentUrl: null,
+                content: card,
+              },
+            ],
+          },
+          {
+            headers: { "content-type": "application/json" },
+          }
+        );
+      }
+      
 }

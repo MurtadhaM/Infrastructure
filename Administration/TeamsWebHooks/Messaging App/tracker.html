@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script defer src="tracker.js"></script>
+
+    <!-- ✅ load jQuery ✅ -->
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"
+    ></script>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="tracker.css" />
+    <rel rel="stylesheet" href="tracker.js" />
+  </head>
+
+  <body>
+    <div id="cutomRequestContainer" class="inputsClass">
+    
+      <h1>Custom Request Form</h1>
+      <!-- <div id="inputs">
+        <label for="webhook-url">Webhook URL</label>
+        <input
+          type="text"
+          id="webhook-url"
+          name="webhook-url"
+          value=""
+          placeholder="Type your URL HERE"
+        />
+
+        <label for="message">Message</label>
+        <input type="text" id="message" />
+        <button id="send">Send</button>
+      </div> -->
+ 
+      <!-- An output area for the result-->
+        
+      <div id="result">
+
+      </div>
+
+    </div>
+
+    <div id="track" class="track">
+    <h1>Track</h1>
+    <button id="btn">Get Public IP</button>
+    <button id="webhook-btn">Send Information To Teams Via Webhook</button>
+  </div>
+
+  </body>
+</html>

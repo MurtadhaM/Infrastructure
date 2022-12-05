@@ -129,7 +129,7 @@ const webhookTarget2 = new WebhookTarget(new URL(webhookUrl2))
 
 webhookTarget2
   .sendAdaptiveCard(
-    AdaptiveCards.declare(SnakeMesasgeCard).render({
+    AdaptiveCards.declare(SnakeCustomCard).render({
       title: 'A Snake had Sent a Message',
       appName: 'Snake Notify',
       description: 'All the baby 🐍 snakes are gone. We need to find them.',
