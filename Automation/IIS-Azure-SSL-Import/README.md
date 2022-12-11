@@ -1,11 +1,92 @@
 # Azure Import PFX Certificate to VM
 
+## Description
 
-This script will import a PFX certificate to a VM in Azure.  The script will also create a new certificate store if one does not exist.
+<img src="https://msendpointmgr.com/wp-content/uploads/2022/01/image-27.png" />
 
-## Usage
 
+This is a proof of concept script that imports a PFX file to a VM.  The script will create a new certificate store if one does not exist.  The script will not overwrite an existing certificate store.  The script will not overwrite an existing certificate in the certificate store.  The script will not overwrite an existing certificate in the VM's certificate store.
+## Prerequisites
+* Azure PowerShell
+* A PFX file
+* A Key Vault
+* A VM with IIS installed
+## Challenge
+The challenge is binding the correct virtual site to the correct certificate without breaking the existing site.  The following is a sample of the IIS configuration.
+## Possible Solution <a href="https://meeg.dev/blog/adding-an-https-binding-to-an-iis-website-using-powershell"> Source</a>
+The possible solution is to use IISAdministration module to bind the certificate to the virtual site.  The following is a sample of the IISAdministration module.
+
+### A. Get the SSL certificate thumbprint
 ```powershell
+function Get-SslCert([String] $name, [String] $location, [String]$storeName) {
+    $thumbprint = (Get-ChildItem "cert:\$location" | where-object { $_.Subject -like "*$name*" } | Select-Object -First 1).Thumbprint
+    # Return the thumbprint along with the arguments provided for context and later usage
+    return new-object psobject -property @{
+        Name = $name
+        Location = $location
+        StoreName = $storeName
+        Thumbprint = $thumbprint
+    }
+}
+# This can be called like so if your cert's common name is "dev.example.com" and is located in your "CurrentUser" store (under Local Computer\Personal\Certificates)
+$sslCert = Get-SslCert "dev.example.com" "CurrentUser\My" "My"
+```
+
+### B. Convert the thumbprint from hexadecimal to a byte array
+```powershell
+function HexToBytes($hex) {
+$bytes = for($i = 0; $i -lt $hex.Length; $i += 2) {
+        [convert]::ToByte($hex.SubString($i, 2), 16)
+    }
+    return $bytes
+}
+```
+### C.  Add the HTTPS binding
+```powershell
+# In this example, we are creating a Website called "example-dev" with a host name of "dev.example.com" that is located under "C:\Sites\example.com"
+$name = "example-dev"
+$hostname = "dev.example.com"
+$path = "C:\Sites\example.com"
+# Get the SSL certificate
+$sslCert = Get-SslCert "dev.example.com" "CurrentUser\My" "My"
+# Get an IISServerManager instance
+$manager = Get-IISServerManager
+# Create the site with http binding
+$site = $manager.Sites.Add($name, "http", "*:80:$hostname", $path)
+# Convert the SSL certificate thumbprint to a byte array
+$thumbprintBytes = HexToBytes $sslCert.Thumbprint
+# Add https binding - this is "noisy" by default so piping to `Out-Null` suppresses the output
+$site.Bindings.Add("*:443:$hostname", $thumbprintBytes, $sslCert.StoreName, 1) | Out-Null
+# Commit your changes    
+$manager.CommitChanges()
+```
+
+
+## Overview
+
+<img src="SERVER.png" />
+
+NOTE: The server needs to be part of the domain before enabling the Certificate Authority 
+
+	A. Add Certificate Authority Role with Web Services
+
+	B. IN IIS Certificate Request, the Common name must be in the following format:
+
+Subdomain.domain.com ==> www.findasnake.com
+
+	2. Export the Request Text
+	
+	3. Navigate to CA.findasnake.com/certsrv/certrqxt.asp
+
+	4. Paste the request and download the keys (SET TYPE TO WEB SERVER)
+	
+
+ have you ever pushed SSL certificate to Azure VM remotely and update the IIS? 
+
+
+
+
+```
 
 $ResourceGroupName = "WEBVM-RG"
 $CertificateStoreName = "My"
@@ -98,7 +179,7 @@ Import-AzKeyVaultCertificate -VaultName $VaultName -Name $CertName -FilePath ./P
 
 ```
 
-### CReate the VM if one does not exist
+### Create the VM if one does not exist
 
 ```powershell
 # Create a VM
