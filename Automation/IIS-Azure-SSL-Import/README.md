@@ -2,7 +2,10 @@
 
 ## Description
 
+<h1> <a href="ssl-certs.md"> READ FIRST </a> </h1>
+
 <img src="https://msendpointmgr.com/wp-content/uploads/2022/01/image-27.png" />
+
 
 
 This is a proof of concept script that imports a PFX file to a VM.  The script will create a new certificate store if one does not exist.  The script will not overwrite an existing certificate store.  The script will not overwrite an existing certificate in the certificate store.  The script will not overwrite an existing certificate in the VM's certificate store.
