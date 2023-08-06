@@ -1,0 +1,55 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "vpnType": {
+            "value": "RouteBased"
+        },
+        "localGatewayName": {
+            "value": "localGateway"
+        },
+        "localGatewayIpAddress": {
+            "value": "52.173.109.64"
+        },
+        "localAddressPrefix": {
+            "value": [
+              "192.168.0.0/16",
+              "172.16.0.0/12",
+              "10.0.1.0/24"
+            ]
+        },
+        "virtualNetworkName": {
+            "value": "azureVnet"
+        },
+        "azureVNetAddressPrefix": {
+            "value": "10.0.0.0/16"
+        },
+        "subnetName": {
+            "value": "SnakeLocalSubnet"
+        },
+        "subnetPrefix": {
+            "value": "10.0.100.0/24"
+        },
+        "gatewaySubnetPrefix": {
+            "value": "10.0.200.0/29"
+        },
+        "gatewayPublicIPName": {
+            "value": "azureGatewayIP"
+        },
+        "gatewayName": {
+            "value": "azureGateway"
+        },
+        "gatewaySku": {
+            "value": "Basic"
+        },
+        "connectionName": {
+            "value": "Azure2Other"
+        },
+        "sharedKey": {
+            "value": "p@ssW0rd123" 
+        },
+        "location": {
+            "value": "eastus2" 
+        }
+    }
+}

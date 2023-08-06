@@ -1,0 +1,22 @@
+{
+  "name": "graphmanagement",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/graph": "^5.0.3",
+    "@azure/msal-browser": "^2.32.2",
+    "@azure/msal-common": "^9.1.1",
+    "@microsoft/mgt": "^2.9.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "morgan": "^1.10.0",
+    "yargs": "^17.6.2"
+  },
+  "description": ""
+}

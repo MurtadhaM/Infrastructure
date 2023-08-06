@@ -1,0 +1,31 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "adminPasswordOrKey": {
+            "value": "p@ssW0rd123" 
+        },
+        "adminUsername": {
+            "value": "admin" // TODO: Fill in parameter value
+        },
+        "localAddressPrefix": {
+            "value": "192.168.100.0/24" // TODO: Fill in parameter value
+        },
+        "localGatewayIpAddress": {
+            "value": "192.168.100.1" // TODO: Fill in parameter value
+        },
+        "sharedKey": {
+            "value": "p@ssW0rd123" // TODO: Fill in parameter value
+        },
+        "subnetPrefix": {
+            "value": "192.168.0.0/16" // TODO: Fill in parameter value
+        },
+        "vmSize": {
+            "value": "Standard_A1"
+        }
+        ,
+        "vmName": {
+            "value": "Standard_D1"
+        }
+    }
+}

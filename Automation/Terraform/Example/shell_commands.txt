@@ -1,0 +1,12 @@
+terraform init
+terraform plan
+terraform show
+terraform apply
+terraform destroy
+terraform output
+terraform validate
+terraform fmt
+terraform providers
+terraform refresh
+terraform graph
+terraform graph |dot  -Tsvg > image.svg

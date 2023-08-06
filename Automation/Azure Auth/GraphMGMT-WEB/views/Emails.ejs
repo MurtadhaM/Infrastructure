@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+    <%- include('partials/header') %>
+    <script>
+        document.querySelector('mgt-get').templateContext = {
+            groupMail: messages => {
+                let groupBy = (list, keyGetter) => {
+                    const map = new Map();
+                    list.forEach(item => {
+                        const key = keyGetter(item);
+                        const collection = map.get(key);
+                        if (!collection) {
+                            map.set(key, [item]);
+                        } else {
+                            collection.push(item);
+                        }
+                    });
+                    return map;
+                };
+        
+                let grouped = groupBy(messages, m => m.sender.emailAddress.address);
+                return [...grouped];
+            }
+        };
+        
+    </script>
+    <mgt-msal2-provider client-id="e825454e-2a21-405a-a100-c0e571e1890e"
+    login-type="redirect/popup" 
+    scopes="Mail.Read,Mail.ReadBasic,Mail.ReadWrite ,user.read,people.read,files.readwrite,sites.readWrite.all" 
+    redirect-uri="http://localhost:3000" 
+    authority="https://login.microsoftonline.com/711e97a5-5f2d-403c-befe-be4c0f6087f1"> 
+</mgt-msal2-provider> 
+<!-- People-->
+<mgt-people-picker>
+    <template data-type="person">
+		<div>
+            {{ person.userPrincipalName }}		</div>
+	</template>
+
+</mgt-people-picker>
+
+<!-- EMAILS-->
+<mgt-get resource="/users/helpdesk@findasnake.com/messages" version="v1.0" scopes="Mail.ReadWrite,User.ReadWrite.All  " max-pages="2">
+	<template>
+		<div class="email" data-for="email in value">
+			<h3>{{ email.subject }}</h3>
+			<h4>
+				<mgt-person person-query="{{email.sender.emailAddress.address}}" view="oneline" person-card="hover">
+				</mgt-person>
+			</h4>
+			<div data-if="email.bodyPreview" class="preview" innerHtml>{{email.bodyPreview}}</div>
+			<div data-else class="preview">
+				email body is empty
+			</div>
+		</div>
+	</template>
+	<template data-type="loading">
+		loading
+	</template>
+	<template data-type="error">
+		{{ this }}
+	</template>
+</mgt-get>
+
+
+
+
+
+</body>
+</html>

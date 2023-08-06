@@ -1,0 +1,22 @@
+{
+  "name": "applicationwithoutauth",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon bin/server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/msal-node": "^1.14.6",
+    "@microsoft/mgt": "^2.9.0",
+    "axios": "^1.2.5",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "yargs": "^17.6.2"
+  }
+}
