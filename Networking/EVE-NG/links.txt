@@ -1,0 +1,81 @@
+
+
+
+
+  "https://bit.ly/IOS-c1700-adventerprisek9-mz-124-25d",
+  "https://bit.ly/IOS-c1700-adventerprisek9-mz-124-15-T14",
+  "https://bit.ly/IOS-c2600-adventerprisek9-mz-124-25d",
+  "https://bit.ly/IOS-c2600-advsecurityk9-mz-124-15-t14",
+  "https://bit.ly/IOS-c2691-adventerprisek9-mz-124-25d",
+  "https://bit.ly/IOS-c2691-adventerprisek9-mz-124-15-T14",
+  "https://bit.ly/IOS-c3640-a3js-mz-124-23",
+  "https://bit.ly/IOS-c3660-a3jk9s-mz-124-19",
+  "https://bit.ly/IOS-c3725-adventerprisek9-mz-124-25d",
+  "https://bit.ly/IOS-c3725-adventerprisek9-mz-124-15-T14",
+  "https://bit.ly/IOS-c3745-adventerprisek9-mz-124-25d",
+  "https://bit.ly/IOS-c3745-adventerprisek9-mz-124-15-T14",
+  "https://bit.ly/IOS-c7200-adventerprisek9-mz-152-4-M7",
+  "https://bit.ly/IOS-c7200-a3jk9s-mz-124-25g",
+  "https://bit.ly/IOS-c7200-adventerprisek9-mz-124-24-T5"
+
+- [x] Cook Books: https://eve-ng.ru/wp-content/uploads/2018/12/EVE-COOK-BOOK-1.6.pdf
+
+
+
+1. Download The VM or ISO 
+
+2. Import into Vmware (Pro)
+
+3. Install Integration Helpers
+
+```
+Wireshark 3.0.6.0  installation
+UltraVNC 1.2.3.1  installation
+putty 0.73 (used as default telnet client)
+plink 0.73 (for wireshark)
+all necessary wrappers
+It will modify windows registry files for proper work
+It will save all the files on the local PC if one would like to modify for example, using SecureCRT instead of default Putty.
+Windows 8 and 10 reg files to support tabbed SecureCRT
+Auto detection of Windows version (7, 8, 10) ( x64 only supported )
+```
+
+Links:
+
+Windows: https://mega.nz/file/G5liXYzK#oaSC1Jrh5m0HaNkReirurtrXhIHGw6NOZX3jgus1xqo
+Mac: https://www.eve-ng.net/repo/EVE-ClientPackV2.dmg
+Linux: https://github.com/SmartFinn/eve-ng-integration
+
+
+### IOU License 
+```bash
+
+cd /opt/unetlab/addons/iol/bin
+python keygen.py
+
+From: md5input=iouPad1 + iouPad2 + struct.pack(‘!i’, ioukey) + iouPad1
+To:     md5input=iouPad1 + iouPad2 + struct.pack(‘!L‘, ioukey) + iouPad1
+
+# PASTE THE KEY TO ~/.iourc
+
+# BLOCK THE PHONE
+ echo ‘127.0.0.127 xml.cisco.com’ >> /etc/hosts
+
+ ```
+
+
+## Download Images
+
+Links:
+https://drive.google.com/drive/folders/1IhhCLAZaxkbJHNipjt_S0jRk0US4Y0Su
+
+
+http://dl.nextadmin.net/dl/EVE-NG-image/qemu/firepower6-NGIPS-6.3.0-83.tar.gz
+http://dl.nextadmin.net/dl/EVE-NG-image/qemu/vcenter-6.7.0.tar.gz
+http://dl.nextadmin.net/dl/EVE-NG-image/qemu/aruba-VMC_8.3.0.3.tar.gz
+http://dl.nextadmin.net/dl/EVE-NG-image/qemu/asav-992-100.tar.gz
+http://dl.nextadmin.net/dl/EVE-NG-image/qemu/esxi-vSphere-6.5u.tar.gz
+https://www.eve-ng.net/repo/EVE-ClientPackV2.dmg
+https://eve-ng.ru/wp-content/uploads/2018/12/EVE-COOK-BOOK-1.6.pdf
+http://dl.nextadmin.net/dl/EVE-NG-image/qemu/mikrotik-6.42.9.tar.gz
+https://drive.google.com/drive/folders/1IhhCLAZaxkbJHNipjt_S0jRk0US4Y0Su
