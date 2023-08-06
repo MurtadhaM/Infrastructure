@@ -1,0 +1,229 @@
+{
+    "$schema": "http://adaptivecards.io/schemas/adaptive-card.json",
+    "type": "AdaptiveCard",
+    "version": "1.0",
+    "body": [
+        {
+            "type": "ColumnSet",
+            "id": "1ede2aba-61b9-faa0-9895-9ed0c26b2e6f",
+            "columns": [
+                {
+                    "type": "Column",
+                    "id": "e5756242-0963-37a2-7cb4-4397886d60bb",
+                    "padding": "Small",
+                    "width": "stretch",
+                    "items": [],
+                    "verticalContentAlignment": "Bottom",
+                    "style": "emphasis",
+                    "horizontalAlignment": "Right",
+                    "backgroundImage": {
+                        "url": "https://static.vecteezy.com/system/resources/thumbnails/001/907/544/small/flat-design-background-with-abstract-pattern-free-vector.jpg",
+                        "horizontalAlignment": "Center",
+                        "verticalAlignment": "Center"
+                    }
+                },
+                {
+                    "type": "Column",
+                    "id": "74215a26-fa8b-e549-cced-7f99fd34a661",
+                    "padding": "None",
+                    "width": "auto",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "id": "795047e2-e63e-6e14-07ba-5a3e13323dff",
+                            "url": "https://img.myloview.com/stickers/snake-vector-logo-mascot-design-400-200314884.jpg",
+                            "size": "Small",
+                            "width": "80px",
+                            "style": "Person",
+                            "horizontalAlignment": "Center",
+                            "selectAction": {
+                                "type": "Action.OpenUrl"
+                            },
+                            "height": "80px"
+                        }
+                    ],
+                    "horizontalAlignment": "Right"
+                }
+            ],
+            "padding": "None",
+            "style": "emphasis",
+            "horizontalAlignment": "Left",
+            "separator": true,
+            "spacing": "None"
+        },
+        {
+            "type": "Container",
+            "id": "NotificationContainer",
+            "padding": "None",
+            "horizontalAlignment": "Center",
+            "verticalContentAlignment": "Center",
+            "selectAction": {
+                "type": "Action.ToggleVisibility",
+                "targetElements": [],
+                "id": "ReadMoreAction",
+                "style": "positive",
+                "isPrimary": true
+            },
+            "items": [
+                {
+                    "type": "TextBlock",
+                    "id": "NotificationText",
+                    "text": "This is the Notification Text",
+                    "wrap": true,
+                    "size": "Medium",
+                    "horizontalAlignment": "Left",
+                    "weight": "Bolder",
+                    "color": "Attention",
+                    "spacing": "None"
+                },
+                {
+                    "type": "Container",
+                    "id": "NotificationDetailsContainer",
+                    "padding": {
+                        "top": "None",
+                        "bottom": "None",
+                        "left": "Small",
+                        "right": "None"
+                    },
+                    "items": [
+                        {
+                            "type": "TextBlock",
+                            "id": "NotificationDetails",
+                            "text": "Linux Systems Administrator - HPC Location: Remote Responsibilities for this exciting role will include: Design and implementation of high-performance comput...",
+                            "wrap": true,
+                            "color": "Accent",
+                            "horizontalAlignment": "Left",
+                            "spacing": "Small"
+                        },
+                        {
+                            "type": "ActionSet",
+                            "actions": [
+                                {
+                                    "type": "Action.ToggleVisibility",
+                                    "id": "ReadMoreButton",
+                                    "title": "Read More",
+                                    "targetElements": [
+                                        "NotificationDetailsContainer.NotificationDetails",
+                                        "ReadMoreAction",
+                                        "NotificationDetails"
+                                    ],
+                                    "style": "positive",
+                                    "isPrimary": true
+                                }
+                            ],
+                            "spacing": "None"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "Container",
+            "id": "fbcee869-2754-287d-bb37-145a4ccd750b",
+            "padding": {
+                "top": "None",
+                "bottom": "None",
+                "left": "Small",
+                "right": "Small"
+            },
+            "spacing": "None",
+            "items": [
+                {
+                    "type": "ActionSet",
+                    "actions": [
+                        {
+                            "type": "Action.ToggleVisibility",
+                            "title": "Reply",
+                            "targetElements": [
+                                "ReplyMessageText",
+                                "ReplyMessageLabel",
+                                "ReplyMessageContainer",
+                                "ReplyContainer"
+                            ],
+                            "style": "positive",
+                            "isPrimary": true,
+                            "id": "ReplyButton"
+                        }
+                    ],
+                    "horizontalAlignment": "Right",
+                    "spacing": "None"
+                }
+            ],
+            "style": "default",
+            "verticalContentAlignment": "Center",
+            "horizontalAlignment": "Center",
+            "separator": true
+        },
+        {
+            "type": "Container",
+            "id": "ReplyContainer",
+            "padding": "Small",
+            "spacing": "None",
+            "separator": true,
+            "items": [
+                {
+                    "type": "Container",
+                    "id": "ReplyMessageContainer",
+                    "padding": "Large",
+                    "style": "default",
+                    "horizontalAlignment": "Center",
+                    "selectAction": {
+                        "type": "Action.ToggleVisibility",
+                        "targetElements": [],
+                        "style": "positive",
+                        "isPrimary": true
+                    },
+                    "items": [
+                        {
+                            "type": "ActionSet",
+                            "horizontalAlignment": "Center"
+                        },
+                        {
+                            "type": "ActionSet"
+                        },
+                        {
+                            "type": "TextBlock",
+                            "id": "ReplyMessageLabel",
+                            "text": "Type Your Message Here",
+                            "wrap": true,
+                            "horizontalAlignment": "Left",
+                            "color": "Accent"
+                        },
+                        {
+                            "type": "Input.Text",
+                            "id": "ReplyMessageText",
+                            "placeholder": "Enter text here",
+                            "isRequired": true,
+                            "isMultiline": true,
+                            "maxLength": 150,
+                            "spacing": "Small",
+                            "isVisible": false
+                        },
+                        {
+                            "type": "ActionSet",
+                            "id": "c8a5ba7e-7ec6-53ae-79da-0cfb952a527e",
+                            "actions": [
+                                {
+                                    "type": "Action.Http",
+                                    "id": "SubmitButton",
+                                    "title": "Reply",
+                                    "method": "POST",
+                                    "url": "https://findasnake.com/api/v1/sendMessage",
+                                    "body": "{\"Message\"::ReplyMessageText.value}",
+                                    "style": "positive",
+                                    "isPrimary": true
+                                }
+                            ],
+                            "horizontalAlignment": "Center",
+                            "separator": true
+                        }
+                    ],
+                    "isVisible": false
+                }
+            ],
+            "horizontalAlignment": "Right",
+            "isVisible": false
+        }
+    ],
+    "padding": "None"
+}

@@ -1,0 +1,50 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+      "machineNameSuffix": {
+        "value": "BPC-IC"
+      },
+      "machineNameNumber": {
+        "value": 1
+      },
+      "OS": {
+        "value": "win11-multisession"
+      },
+      "virtualMachineSize": {
+        "value": "Standard_B2ms - 2 vCPU, 8GB Memory"
+      },
+      "VMCount": {
+        "value": 1
+      },
+      "subnetName": {
+        
+        "value": "internal"
+      },
+      "adminPassword": {
+        "value": "Mavaratchi1."
+      },
+      "autoShutdown": {
+        "value": "Enabled"
+      },
+      "timeZone": {
+        "value": "(UTC) Coordinated Universal Time"
+      },
+      "shutdownHour": {
+        "value": "18:00"
+      },
+      "Owner": {
+        "value": "zz"
+      },
+      "Purpose": {
+        "value": "zzz"
+      },
+      "OwnerEmail": {
+        "value": "zz"
+      }
+    },
+    "script": {
+      "script": "while ($true) { Write-Host 'Hello World' ; Start-Sleep -Seconds 10 }"
+    }
+    
+  }
