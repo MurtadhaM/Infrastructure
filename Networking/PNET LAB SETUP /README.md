@@ -12,8 +12,8 @@
 ---
 ![Static Badge](https://img.shields.io/badge/Download-Desktop?style=flat-square&logo=linux&logoColor=&label=PNET&labelColor=blue&color=red)
 ---
-<a align=center href="https://pnetlab.com/pages/download"> <p align=center>
-LINK TO DOWNLOAD PNET or EVE-NG
+<a align=center href="https://pnetlab.com/pages/download"> LINK TO DOWNLOAD PNET or EVE-NG
+<p align=center>
 </p>
 </a>
 
@@ -22,10 +22,8 @@ LINK TO DOWNLOAD PNET or EVE-NG
 ---
 ![Static Badge](https://img.shields.io/badge/Installation-Desktop?style=flat-square&logo=linux&logoColor=&label=Files&labelColor=blue&color=red)
 ---
-<a align=center href="https://raw.githubusercontent.com/MurtadhaM/Infrastructure/main/Networking/PNET%20LAB%20SETUP%20/files_downloader.sh"> <p align=center>
-Download Dynamips, IOL, QEMU Images
+<p align=center><a align=center href="https://raw.githubusercontent.com/MurtadhaM/Infrastructure/main/Networking/PNET%20LAB%20SETUP%20/files_downloader.sh"> Download Dynamips, IOL, QEMU Images</a>
 </p>
-</a>
 
 ```bash
 sh -c $(curl -fsSL $URL)
