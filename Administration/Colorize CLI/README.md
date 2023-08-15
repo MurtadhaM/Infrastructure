@@ -9,10 +9,10 @@ using ChromaTerm to colorize the CLI on many popular terminal emulators like PuT
 
 | Steps | Command |
 | :---: | :---: |
-| Installation | `pip3 install chromaterm` |
-| Configuration | `curl -L https://raw.githubusercontent.com/0x1CA3/ChromaTerm/main/ChromaTerm.conf -o ~/.chromaterm.yml` |
-| Integration | `TOOLS="ssh telnet minicom ifconfig ip netstat ping traceroute"` |
-| Alias | `for tool in $TOOLS; do alias $tool="ct  $tool"; done` |
+| Installation | ```pip3 install chromaterm``` |
+| Configuration | ```curl -L https://raw.githubusercontent.com/MurtadhaM/Infrastructure/main/Administration/Colorize%20CLI/chromaterm.yml -o ~/.chromaterm.yml``` |
+| Integration | ``` TOOLS="ssh telnet minicom ifconfig ip netstat ping traceroute"``` |
+| Alias | ```echo $TOOLS \| while read -d ' ' tool; do alias $tool="ct  $tool";done```|
 
 ![DEMO](https://img.shields.io/badge/Demo-Colorize-purple)
 ---
