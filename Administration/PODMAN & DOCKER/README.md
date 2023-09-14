@@ -33,10 +33,7 @@
 sudo apt-get update && sudo apt-get install podman
 ## Install podman-workstation
 podman machine init
-podman machine startcm
-podman machine env
-
-
+podman machine start
 ## Run Podman
 podman run -it --rm ubuntu:latest
 ## Build Podman Image
