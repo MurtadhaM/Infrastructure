@@ -76,26 +76,32 @@ sudo apt install vim certbot  python3-certbot-dns-cloudflare python3-pip
 ```
 
 - CentOS / RHEL / Fedora
-```bash
+
+```zsh
 sudo dnf -y install epel-release
 sudo dnf -y install vim certbot python3-certbot-dns-cloudflare python3-pip
 ```
 
 - [x] Crypto Tools
-```bash
+
+```zsh
 sudo python3 -m pip install -U pyOpenSSL cryptography
 ```
 - [x] Config Export
+
 ```bash
 mkdir -p ~/.secrets/certbot
-sudo tee /etc/letsencrypt/dnscloudflare.ini > /dev/null <<EOT
-- [x] Cloudflare API token used by Certbot
-dns_cloudflare_api_token = 
+sudo 'dns_cloudflare_api_token = "TOKEN"' > /etc/letsencrypt/dnscloudflare.in
+```
+
+- [x] export the API TOKEN VALUE
+
+```
+export TOKEN="1xyJ2KR7Nj7VnYW4GC292fuW6PW1A_G4ZfQ4C2eS"
 ```
 - [x] Permissions
 
 ```bash
-
 sudo chmod 0600 /etc/letsencrypt/dnscloudflare.ini
 ```
 
