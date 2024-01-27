@@ -1,0 +1,14 @@
+{
+  "name": "eventgrid-azure-functions",
+  "version": "1.0.0",
+  "description": "This is a simple Azure Function for Event Grid Demo purposes",
+  "scripts": {
+    "start": "func start ",
+    "test": "echo \"No tests yet...\""
+  },
+  "dependencies": {
+    "@azure/functions": "^4.0.0"
+  },
+  "devDependencies": {},
+  "main": "src/functions/*.js"
+}

@@ -1,0 +1,29 @@
+# Azure CLI
+
+## Install Azure CLI
+pip install azure-cli
+## Login to Azure
+az login
+## List all subscriptions
+az account list --query "[].name"  
+## Set Default Subscription
+az account set  --subscription "findasnake.com" 
+## List all resource groups
+az group list --query "[].name"
+## Set Default configuration
+az configure --defaults group=findasnake-cli-rg 
+az configure --defaults location=eastus
+az configure --defaults subscription=findasnake.com
+az configure --defaults output=table
+az configure --list defaults
+## Create Resource Group
+az group create --name findasnake-cli-rg --location eastus
+
+## Create Storage Account
+az storage account create --name findasnakeclisa --location eastus --resource-group findasnake-cli-rg --sku Standard_LRS
+
+## GET Storage Account Connection String
+
+$connectionString = az storage account show-connection-string  --name snakefunction  --query connectionString -o json |ConvertFrom-Json
+## List Storage Account Containers
+az storage container list --account-name snakefunction --connection-string $connectionString
