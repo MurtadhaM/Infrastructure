@@ -5,11 +5,14 @@ This is a script to configure Cisco Voice VLANs. It is based on the Cisco Voice 
 
 ## Table of Contents
 ----
-- [Overview](#overview)
-- [Lab](#lab)
-- [Configuration](#configuration)
-- [License](#license)
-- [Author](#author)
+- [Cisco  Voice VLAN Configuration](#cisco--voice-vlan-configuration)
+  - [ ](#-)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+    - [Lab](#lab)
+    - [Configuration](#configuration)
+      - [License](#license)
+      - [Author](#author)
 
 
 ## Overview
