@@ -1,0 +1,144 @@
+
+!
+! Last configuration change at 17:40:10 EST Sun Feb 4 2024
+!
+version 15.2
+service timestamps debug datetime localtime show-timezone
+service timestamps log datetime localtime show-timezone
+no service password-encryption
+service compress-config
+!
+hostname SW-LAN
+!
+boot-start-marker
+boot-end-marker
+!
+! VLANS
+vlan 10
+ name LAN
+vlan 30
+    name WIFI
+vlan 50
+    name LAB
+vlan 60
+    name GUEST
+vlan 500
+    name MANAGEMENT
+
+!
+username cisco password 0 cisco
+no aaa new-model
+clock timezone EST -5 0
+!
+!
+!
+!
+!
+!
+ip dhcp smart-relay
+!
+!
+ip dhcp snooping vlan 10,30,50,60,500
+ip dhcp snooping
+ip domain-lookup source-interface Ethernet0/0
+ip domain-name findasnake.com
+ip name-server 1.1.1.1
+ip name-server 8.8.8.8
+ip dhcp-server 172.16.100.1
+ip cef
+no ipv6 cef
+!
+!
+!
+spanning-tree mode rapid-pvst
+spanning-tree extend system-id
+!
+vlan internal allocation policy ascending
+lldp run
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+interface Ethernet0/0
+ description Uplink to WAN
+ switchport trunk allowed vlan 10,30,50,60,500
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+ switchport nonegotiate
+!
+interface Ethernet0/1
+ switchport access vlan 10
+ switchport mode access
+!
+interface Ethernet0/2
+ switchport access vlan 10
+ switchport mode access
+!
+interface Ethernet0/3
+ switchport access vlan 10
+ switchport mode access
+!
+interface Ethernet1/0
+!
+interface Ethernet1/1
+!
+interface Ethernet1/2
+!
+interface Ethernet1/3
+!
+interface Vlan500
+ description MANAGEMENT
+ ip dhcp client hostname SW-LAN-MANAGEMENT
+ ip address 10.0.50.200 255.255.255.0 secondary
+ ip address 172.16.50.200 255.255.255.0
+!
+ip forward-protocol nd
+!
+ip http server
+ip http authentication local
+ip http secure-server
+ip http timeout-policy idle 60 life 86400 requests 10000
+!
+ip ssh version 2
+!
+!
+logging history emergencies
+!
+!
+!
+control-plane
+!
+banner login ^CCCC
+                  Snake-SW
+______
+
+^C
+banner motd ^CCCC
+----------------------------------
+***** AUTHORIZED SNAKES ONLY *****
+HOST: SW-LAN
+----------------------------------
+^C
+!
+line con 0
+ password cisco
+ logging synchronous
+ login local
+line aux 0
+line vty 0 4
+ password cisco
+ login local
+ transport input all
+!
+!
+end
