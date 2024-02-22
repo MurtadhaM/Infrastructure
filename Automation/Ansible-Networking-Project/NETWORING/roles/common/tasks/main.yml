@@ -1,0 +1,8 @@
+---
+# This is the main tasks file for the common role
+
+- name: Run show version on remote devices
+  ios_command:
+    commands: show version
+  register: show_version
+  
