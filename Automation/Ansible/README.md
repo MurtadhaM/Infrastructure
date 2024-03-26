@@ -6,11 +6,18 @@ center src="https://cdn.educba.com/academy/wp-content/uploads/2019/10/ansible-ar
 
 ## Table of Contents
 ----
+- [Ansible](#ansible)
+  - [Table of Contents](#table-of-contents)
 - [Overview](#overview)
 - [Environment](#environment)
+    - [Directory Structure](#directory-structure)
+  - [Storing Credentials](#storing-credentials)
 - [Configuration](#configuration)
-- [License](#license)
-- [Author](#author)
+    - [Sample Playbook](#sample-playbook)
+    - [Sample Inventory](#sample-inventory)
+    - [Sample Vault](#sample-vault)
+      - [License](#license)
+      - [Author](#author)
 
 
 # Overview

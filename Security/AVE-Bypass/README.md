@@ -7,3 +7,10 @@ This repository contains a collection of Anti-Virus ByPass Techniques. The techn
 - [Useful GitHub Repository](https://github.com/S3cur3Th1sSh1t?tab=stars)
 - [Useful Blog](https://s3cur3th1ssh1t.github.io/)
 - 
+
+
+
+
+- [x] TODO:
+  - Step 1
+  - Step 2

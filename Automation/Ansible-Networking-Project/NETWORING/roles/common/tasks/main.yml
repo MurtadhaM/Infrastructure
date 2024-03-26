@@ -2,7 +2,7 @@
 # This is the main tasks file for the common role
 
 - name: Run show version on remote devices
-  ios_command:
+  cisco.ios.ios_config:
     commands: show version
   register: show_version
-  
+

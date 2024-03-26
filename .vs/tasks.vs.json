@@ -1,0 +1,10 @@
+{
+  "version": "0.2.1",
+  "tasks": [
+    {
+      "taskLabel": "task-VSCODE",
+      "appliesTo": "Security/SHELL/VSCODE/",
+      "type": "launch"
+    }
+  ]
+}

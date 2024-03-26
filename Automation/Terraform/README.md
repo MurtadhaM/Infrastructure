@@ -6,15 +6,17 @@ center src="https://www.devopsschool.com/blog/wp-content/uploads/2021/07/terrafo
 
 ## Table of Contents
 ----
+- [Terraform](#terraform)
+  - [Table of Contents](#table-of-contents)
 - [Overview](#overview)
-  - [Prerequisites](#prerequisites)
-  - [Installation](#installation) 
-  - [Environment](#environment)
-  - [Terraform Commands](#shell-commands)
-  - [Resources](#resources)
+    - [Installation](#installation)
+    - [Resources:](#resources)
+  - [Lifecycle](#lifecycle)
+      - [Example:](#example)
+  - [Shell Commands:](#shell-commands)
 - [Configuration](#configuration)
-- [License](#license)
-- [Author](#author)
+      - [License](#license)
+      - [Author](#author)
 
 # Overview
 Terraform is an open-source infrastructure as code software tool created by HashiCorp. Users define and provide data center infrastructure using a declarative configuration language known as HashiCorp Configuration Language, or optionally JSON. Terraform generates an execution plan describing what it will do to reach the desired state, and then executes it to build the described infrastructure. As of May 2021, Terraform supports more than 90 infrastructure and service providers.
@@ -168,5 +170,4 @@ resource "azurerm_subnet" "subnet" {
 [MIT](https://choosealicense.com/licenses/mit/)
 
 #### Author
-[Murtadha Marzouq](http://www.findasnake.com 
-    )
+[Murtadha Marzouq](http://www.findasnake.com)
