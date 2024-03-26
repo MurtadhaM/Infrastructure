@@ -1,0 +1,7 @@
+---
+username: cisco
+password: cisco
+enable_password: cisco
+source_dir: /opt/backups
+github_repo: https://github.com/MurtadhaM/backups
+

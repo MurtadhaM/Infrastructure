@@ -1,0 +1,5 @@
+---
+- name: Backup Cisco switch configurations
+  hosts: switches
+  roles:
+    - backup

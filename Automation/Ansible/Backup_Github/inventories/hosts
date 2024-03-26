@@ -1,0 +1,3 @@
+[switches]
+SW02.findasake.com ansible_host=172.16.0.250 ansible_network_os=ios
+SW01.findasnake.com ansible_host=172.168.0.4 ansible_network_os=ios
