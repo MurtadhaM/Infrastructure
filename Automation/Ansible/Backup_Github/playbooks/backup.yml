@@ -3,7 +3,7 @@
   gather_facts: false
   connection: network_cli
   vars_files:
-    - '~/.ansible/vars/all.yml'
+    - "/mnt/c/Users/MMARZ/Github/Infrastructure/Automation/Ansible/Backup_Github/vars/all.yml"
   roles:
     - role: 'roles/backup'
   handlers:

@@ -1,9 +1,11 @@
-# - name: Backup Configuration
-#   when: ansible_network_os == "ios"
-#   register: backup_config
-#   include_tasks: backup_running_config.yml
+- name: Backup Configuration
+  when: ansible_network_os == "ios"
+  register: backup_config
+  include_tasks: backup_running_config.yml
   
 - name: Commit Repository
   when: ansible_network_os == "ios"
   include_tasks: commit-changes.yml
+  
+  
   
