@@ -1,5 +1,10 @@
 ---
-- name: Backup Cisco switch configurations
-  hosts: switches
+- hosts: switches
+  gather_facts: false
+  connection: network_cli
+  vars_files:
+    - '~/.ansible/vars/all.yml'
   roles:
-    - backup
+    - role: 'roles/backup'
+  handlers:
+    - include_tasks: handlers/debug.yml

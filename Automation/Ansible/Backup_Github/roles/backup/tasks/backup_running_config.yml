@@ -1,0 +1,9 @@
+- ios_command:
+    commands:
+      - "show running-config"
+  register: running_config
+- ansible.builtin.copy:
+    content: "{{ running_config.stdout[0] }}"
+    dest: "/opt/backups/Ansible-Network-Automation/backups/{{ inventory_hostname }}-running-config.txt"  
+- ansible.builtin.debug:
+    msg: "Backup of running configuration has been completed"

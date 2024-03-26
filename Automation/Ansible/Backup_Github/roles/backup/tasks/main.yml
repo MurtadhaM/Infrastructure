@@ -1,25 +1,9 @@
----
-- name: Backup Cisco switch configurations
-  hosts: switches
-  gather_facts: no
-  tasks:
-    - name: Backup running configuration
-      ios_command:
-        commands: show running-config
-      register: config_output
-
-    - name: Save configuration to a file
-      copy:
-        content: "{{ config_output.stdout[0] }}"
-        dest: "/opt/backups/{{ inventory_hostname }}_config.txt"a
-
-    
-    - name: Add, commit, and push to GitHub repo
-      ansible.builtin.git:
-        repo: "git@github.com:MurtadhaM/backups.git"
-        dest: "/opt/backups/{{ inventory_hostname }}_config.txt"
-        force: yes
-        remote: origin
-        push: yes
-        private_key: "/home/user/.ssh/id_rsa"
-        msg: "Automatic backup commit - {{ ansible_date_time.date }} by {{ ansible_user }}"
+# - name: Backup Configuration
+#   when: ansible_network_os == "ios"
+#   register: backup_config
+#   include_tasks: backup_running_config.yml
+  
+- name: Commit Repository
+  when: ansible_network_os == "ios"
+  include_tasks: commit-changes.yml
+  
