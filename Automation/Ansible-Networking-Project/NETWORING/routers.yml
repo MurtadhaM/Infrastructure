@@ -1,8 +1,0 @@
----
-# file: routers.yml
-
-- hosts: routers
-  remote_user: cisco
-  platform: ios
-  roles:
-    - common

@@ -1,4 +1,0 @@
----
-# DEBUG HANDLER 
-- ansible.builtin.debug:
-    msg: "Tasks {{running_config|default('')}} and {{ vlans|default('')}} have been completed"

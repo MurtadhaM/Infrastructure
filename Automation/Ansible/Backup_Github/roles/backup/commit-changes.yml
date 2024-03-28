@@ -1,5 +1,0 @@
-- shell: "cd {{git_dir}}&& git config --global user.name {{ git_user }} && git config --global user.email {{ git_email }} && git add . && git commit -m 'Backup Configuration' && git push origin master"
-  args:
-    executable: /bin/bash
-  register: git_push
-
