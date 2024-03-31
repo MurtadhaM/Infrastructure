@@ -1,25 +1,33 @@
 .
-├── AI
 ├── Administration
 │   ├── Azure-CLI-SETUP
 │   ├── Azure-VM-Provisioning
-│   ├── COLORIZE SERIAL EMULATORSS
 │   ├── Colorize CLI
+│   ├── COLORIZE SERIAL EMULATORSS
 │   ├── ConnectWise
 │   ├── EVENTGRID Azure Functions
 │   ├── GNS3 Web Lab
+│   ├── HTMX
 │   ├── KVM_QEMU
 │   ├── OpenAI Cloud Integration
 │   ├── PODMAN & DOCKER
+│   ├── README.md
 │   ├── Remote-Connection-Tool
 │   ├── TeamsWebHooks
 │   ├── Terminal_keyBinds
 │   └── WSL CUSTOM IP
+├── AI
+│   ├── OpenAI.py
+│   └── Uncensored AI Model (local)
 ├── Automation
 │   ├── AI_Query
 │   ├── Ansible
+│   ├── Ansible-Networking-Project
+│   ├── ANSIBLE-PRIVATE
+│   ├── Automatic Form Submission
 │   ├── Azure Auth
 │   ├── Azure Powershell
+│   ├── Crawler
 │   ├── Database V Data Warehouse V Data Lakes
 │   ├── DigitalOcean API
 │   ├── IIS-Azure-SSL-Import
@@ -28,6 +36,17 @@
 │   ├── Terraform
 │   ├── Windows Autopilot
 │   └── Windows Deployment
+├── docs
+│   ├── after.html
+│   ├── CNAME
+│   ├── function.js
+│   ├── index.html
+│   ├── main.css
+│   ├── main.js
+│   ├── markdown-it.js
+│   ├── markdown-to-html.js
+│   └── README.md
+├── LICENSE
 ├── Networking
 │   ├── AZURE-Point-to-Site
 │   ├── CCIE
@@ -37,20 +56,27 @@
 │   ├── EVE-NG
 │   ├── Fortigate-Remote-Management
 │   ├── HA Fortinet
+│   ├── L3_AND_L2_VLAN (int vlan)
 │   ├── Monitoring
+│   ├── Netconf
 │   ├── NGINX Proxy Manager
 │   ├── NPS and RADIUS
-│   ├── Netconf
+│   ├── README.md
 │   ├── Software-Defined-Networking
 │   └── Web Sockets
-└── Security
-    ├── Apporto
-    ├── Azure Identity SC-300
-    ├── CANVAS QUIZ RESEARCH
-    ├── Modern_Payload_Delivery
-    ├── PasswordCracking
-    ├── REMOTE-APPS
-    ├── Radius Authentication
-    └── Reverse Proxy & SSL Wildcards
+├── README.md
+├── Security
+│   ├── Apporto
+│   ├── AVE-Bypass
+│   ├── Azure Identity SC-300
+│   ├── CANVAS QUIZ RESEARCH
+│   ├── Modern_Payload_Delivery
+│   ├── PasswordCracking
+│   ├── Radius Authentication
+│   ├── REMOTE-APPS
+│   ├── Reverse Proxy & SSL Wildcards
+│   ├── shell
+│   └── SOCKETS
+└── tree.txt
 
-53 directories
+65 directories, 15 files
