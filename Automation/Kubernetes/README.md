@@ -16,9 +16,9 @@ sudo install minikube /usr/local/bin/
 # INSTALL DEPENDENCIES
 apt install -y qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils virtinst virt-manager docker.io conntrack 
 # RUN SERVICES
-libvirtd ;
+libvirtd&;
 disown %libvirtd ; 
-virtlogd  ;
+virtlogd&  ;
 disown %virtlogd;
 service docker start
 # START MINIKUBE
