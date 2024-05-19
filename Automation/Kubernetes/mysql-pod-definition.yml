@@ -4,7 +4,7 @@ metadata:
   name: mysql-pod
   labels:
     app: mysql-pod
-    type: frontend
+    type: front-end
 spec:
   containers:
     - name: mysql
