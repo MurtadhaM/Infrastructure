@@ -6,7 +6,7 @@ spec:
   type: NodePort
   selector:
     app: mysql-pod
-    type: frontend
+    type: 
   ports:
     - targetPort: 3306
       port: 3306

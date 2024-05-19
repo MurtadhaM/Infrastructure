@@ -4,6 +4,7 @@ metadata:
   name: nginx-pod
   labels:
     app: nginx-pod
+    type: frontend
 spec:
   containers:
     - name: nginx
