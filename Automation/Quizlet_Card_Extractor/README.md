@@ -8,7 +8,7 @@ Extract Quizlet cards from a Quizlet page.
 - [Console] Paste the code below and press Enter.
 
 ```javascript
-fetch('https://raw.githubusercontent.com/kevinadhiguna/quizlet-card-extractor/main/quizlet-card-extractor.js')
+fetch('https://raw.githubusercontent.com/MurtadhaM/Infrastructure/main/Automation/Quizlet_Card_Extractor/Quizlet_Card_Extractor.js')
   .then(response => response.text())
   .then(text => eval(text));
 ```

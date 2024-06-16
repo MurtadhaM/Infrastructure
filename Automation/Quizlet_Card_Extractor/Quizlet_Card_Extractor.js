@@ -21,4 +21,4 @@ function extractIndexCards() {
 }
 
 let indexCards = extractIndexCards()
-console.log(`Extracted ${indexCards.length} index cards from the Quizlet se
+console.log(`Extracted ${indexCards.length} index cards from the Quizlet set`)
