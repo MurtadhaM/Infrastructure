@@ -3,12 +3,27 @@
 Extract Quizlet cards from a Quizlet page.
 
 ## Usage
+- [x] Open the Quizlet set page.
+- [x] Open the developer console in your browser **F12**.
+- [x] Paste the code below and press Enter.
 
-- [Developer Console] Open the developer console in your browser F12.
-- [Console] Paste the code below and press Enter.
-
+## Code
 ```javascript
-fetch('https://raw.githubusercontent.com/MurtadhaM/Infrastructure/main/Automation/Quizlet_Card_Extractor/Quizlet_Card_Extractor.js')
-  .then(response => response.text())
-  .then(text => eval(text));
+
+function extractIndexCards() {
+    let indexCards = []
+    document.querySelectorAll('.SetPageTerms-term').forEach(element=>{
+    let question = element.querySelectorAll('.TermText')[0].innerText;
+    let answer = element.querySelectorAll('.TermText')[1].innerText
+    let indexCard={"Question":question, "Answer":answer}
+    indexCards.push(indexCard)
+    })
+    return indexCards
+}
+
+let indexCards = extractIndexCards()
+console.log(`Extracted ${indexCards.length} index cards from the Quizlet set.`)
+indexCards 
+
 ```
+
