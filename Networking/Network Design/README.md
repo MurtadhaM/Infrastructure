@@ -2,6 +2,7 @@
 ## Table of Contents
 - [Network Design Topologies](#network-design-topologies)
   - [Table of Contents](#table-of-contents)
+  - [Quick Reference](#quick-reference)
   - [Summary](#summary)
   - [Types of Network Topologies](#types-of-network-topologies)
     - [1. **Flat Topology**](#1-flat-topology)
@@ -13,6 +14,11 @@
       - [2.2 **2-Tier Architecture**](#22-2-tier-architecture)
     - [3. **Spine-Leaf Topology**](#3-spine-leaf-topology)
     - [Performance Considerations](#performance-considerations)
+
+## Quick Reference
+- [Network Design Topologies](https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Data_Center/DC_Infra2_5/DCI_SRND_2_5a_book.pdf)
+- [Cisco Presentation](https://www.cisco.com/c/dam/global/en_ae/training-events/pdfs/designing-smart-and-reliable-networks.pdf)
+
 
 ## Summary
 
@@ -49,8 +55,6 @@
 - Provides user access to network resources.
 - Example: Cisco Catalyst 3750 Series.
 - Example: Data Center Network.
-
-  Source: https://www.cisco.com/c/dam/global/en_ae/training-events/pdfs/designing-smart-and-reliable-networks.pdf
 
 #### 2.2 **2-Tier Architecture**
 Core and Distribution layers are combined.
