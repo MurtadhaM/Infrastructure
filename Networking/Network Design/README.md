@@ -19,6 +19,8 @@
 - [Network Design Topologies](https://www.cisco.com/c/en/us/td/docs/solutions/Enterprise/Data_Center/DC_Infra2_5/DCI_SRND_2_5a_book.pdf)
 - [Cisco Presentation](https://www.cisco.com/c/dam/global/en_ae/training-events/pdfs/designing-smart-and-reliable-networks.pdf)
 
+- [Spine-Leaf Topology (Video)](https://www.youtube.com/watch?v=IPaU-N7p4L0)
+- [3-Tier Architecture (Video)](https://www.youtube.com/watch?v=XHlr791Lid0)
 
 ## Summary
 
