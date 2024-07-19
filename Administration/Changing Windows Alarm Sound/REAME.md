@@ -18,7 +18,7 @@ cmd.exe /c icacls "C:\Windows\Media\Alarm01.wav" /grant %username%:F
 # Move the original file to a backup location
 move /y "C:\Windows\Media\Alarm01.wav" "C:\Windows\Media\Alarm01.wav.bak"
 # Download the sound you want to use as an alarm
-curl -o "C:\Windows\Media\Alarm01.wav" "https://raw.githubusercontent.com/MurtadhaM/Infrastructure/main/Administration/Alarm/Concerning%20Hobbits.wav"
+curl -o "C:\Windows\Media\Alarm01.wav" "https://github.com/MurtadhaM/Infrastructure/raw/main/Administration/Changing%20Windows%20Alarm%20Sound/Concerning%20Hobbits.wav"
 ```
 
 #### Permissions to override the default alarm sound as TrustedInstaller
@@ -30,6 +30,6 @@ Invoke-WebRequest -Uri "https://raw.githubusercontent.com/jschicht/RunAsTI/maste
 RunAsTI64.exe cmd.exe 
 ## Now you can run the following command to change the permissions:
 move /y "C:\Windows\Media\Alarm01.wav" "C:\Windows\Media\Alarm01.wav.bak"
-curl -o "C:\Windows\Media\Alarm01.wav" "https://raw.githubusercontent.com/MurtadhaM/Infrastructure/main/Administration/Alarm/Concerning%20Hobbits.wav"
+curl -o "C:\Windows\Media\Alarm01.wav" "hthttps://github.com/MurtadhaM/Infrastructure/raw/main/Administration/Changing%20Windows%20Alarm%20Sound/Concerning%20Hobbits.wavtps://github.com/MurtadhaM/Infrastructure/raw/main/Administration/Changing%20Windows%20Alarm%20Sound/Concerning%20Hobbits.wav"
 ```
 
